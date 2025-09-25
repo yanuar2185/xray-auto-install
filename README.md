@@ -412,7 +412,7 @@ Script ini dilisensikan di bawah [MIT License](LICENSE). Lihat file LICENSE untu
 - **Discussions**: Diskusi di [GitHub Discussions](https://github.com/yanuar2185/xray-auto-install/discussions)
 
 ### Commercial Support
-Untuk dukungan komersial atau kustomisasi enterprise, hubungi: [support@yourdomain.com](mailto:ardian.syahputra9655@gmail.com)
+Untuk dukungan komersial atau kustomisasi enterprise, hubungi: [ardian.syahputra9655@gmail.com](mailto:ardian.syahputra9655@gmail.com)
 
 ---
 
@@ -422,5 +422,6 @@ Untuk dukungan komersial atau kustomisasi enterprise, hubungi: [support@yourdoma
 **🔄 Stay updated dengan follow repository ini untuk mendapat notifikasi update terbaru.**
 
 Whatsapp "085135087445"
+
 
 
