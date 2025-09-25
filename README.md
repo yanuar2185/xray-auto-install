@@ -62,7 +62,8 @@ sudo ./xray-auto-install.sh
 ```
 
 # BUY COFFEE
-![photo_2025-09-25_23-09-45](https://github.com/user-attachments/assets/410e3c14-47cf-456d-a93b-e8d51d1c466c)
+![photo_2025-09-25_23-09-45](https://github.com/user-attachments/assets/a6c145fb-a11d-4513-b299-5374f9fd8bf2)
+
 
 
 ### Konfigurasi Domain (Opsional tapi Direkomendasikan)
@@ -426,6 +427,7 @@ Untuk dukungan komersial atau kustomisasi enterprise, hubungi: [ardian.syahputra
 **🔄 Stay updated dengan follow repository ini untuk mendapat notifikasi update terbaru.**
 
 Whatsapp "085135087445"
+
 
 
 
