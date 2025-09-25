@@ -623,9 +623,9 @@ setup_nginx_http_only() {
         source /root/xray-ports.conf
     else
         # Fallback jika file tidak ada, baca dari config Xray
-        VMESS_PORT=$(python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vmess'][0])" 2>/dev/null || echo "10001")
-        VLESS_PORT=$(python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vless'][0])" 2>/dev/null || echo "20001")
-        TROJAN_PORT=$(python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='trojan'][0])" 2>/dev/null || echo "30001")
+        VMESS_PORT=$(python3 -c "import json,sys; config_path=sys.argv[1]; config=json.load(open(config_path)); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vmess'][0])" "$CONFIG_DIR/config.json" 2>/dev/null || echo "10001")
+        VLESS_PORT=$(python3 -c "import json,sys; config_path=sys.argv[1]; config=json.load(open(config_path)); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vless'][0])" "$CONFIG_DIR/config.json" 2>/dev/null || echo "20001")
+        TROJAN_PORT=$(python3 -c "import json,sys; config_path=sys.argv[1]; config=json.load(open(config_path)); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='trojan'][0])" "$CONFIG_DIR/config.json" 2>/dev/null || echo "30001")
     fi
     
     print_status "Menggunakan ports: VMess=$VMESS_PORT, VLESS=$VLESS_PORT, Trojan=$TROJAN_PORT"
@@ -852,9 +852,9 @@ setup_nginx_reverse_proxy() {
         source /root/xray-ports.conf
     else
         # Fallback jika file tidak ada, baca dari config Xray
-        VMESS_PORT=$(python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vmess'][0])" 2>/dev/null || echo "10001")
-        VLESS_PORT=$(python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vless'][0])" 2>/dev/null || echo "20001")
-        TROJAN_PORT=$(python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='trojan'][0])" 2>/dev/null || echo "30001")
+        VMESS_PORT=$(python3 -c "import json,sys; config_path=sys.argv[1]; config=json.load(open(config_path)); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vmess'][0])" "$CONFIG_DIR/config.json" 2>/dev/null || echo "10001")
+        VLESS_PORT=$(python3 -c "import json,sys; config_path=sys.argv[1]; config=json.load(open(config_path)); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vless'][0])" "$CONFIG_DIR/config.json" 2>/dev/null || echo "20001")
+        TROJAN_PORT=$(python3 -c "import json,sys; config_path=sys.argv[1]; config=json.load(open(config_path)); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='trojan'][0])" "$CONFIG_DIR/config.json" 2>/dev/null || echo "30001")
     fi
     
     print_status "Menggunakan ports: VMess=$VMESS_PORT, VLESS=$VLESS_PORT, Trojan=$TROJAN_PORT"
@@ -1533,9 +1533,9 @@ configure_firewall() {
     print_status "Configuring firewall for multi-protocol setup..."
     
     # Get ports from config
-    VMESS_PORT=$(python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vmess'][0])" 2>/dev/null || echo "10001")
-    VLESS_PORT=$(python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vless'][0])" 2>/dev/null || echo "20001")
-    TROJAN_PORT=$(python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='trojan'][0])" 2>/dev/null || echo "30001")
+    VMESS_PORT=$(python3 -c "import json,sys; config_path=sys.argv[1]; config=json.load(open(config_path)); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vmess'][0])" "$CONFIG_DIR/config.json" 2>/dev/null || echo "10001")
+    VLESS_PORT=$(python3 -c "import json,sys; config_path=sys.argv[1]; config=json.load(open(config_path)); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vless'][0])" "$CONFIG_DIR/config.json" 2>/dev/null || echo "20001")
+    TROJAN_PORT=$(python3 -c "import json,sys; config_path=sys.argv[1]; config=json.load(open(config_path)); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='trojan'][0])" "$CONFIG_DIR/config.json" 2>/dev/null || echo "30001")
     
     if command -v ufw >/dev/null 2>&1; then
         ufw allow $VMESS_PORT/tcp
@@ -3317,7 +3317,7 @@ management_menu() {
                 echo ""
                 print_status "Konfigurasi Protocol:"
                 echo "Protocol yang aktif saat ini:"
-                python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); [print(f\"- {i['protocol'].upper()}: Port {i['port']}\") for i in config['inbounds'] if i.get('protocol') not in ['dokodemo-door']]"
+                python3 -c "import json,sys; config=json.load(open(sys.argv[1])); [print(f'- {i[\"protocol\"].upper()}: Port {i[\"port\"]}') for i in config['inbounds'] if i.get('protocol') not in ['dokodemo-door']]" "$CONFIG_DIR/config.json"
                 read -p "Tekan Enter untuk melanjutkan..."
                 ;;
             21)
@@ -3437,9 +3437,10 @@ elif [[ -f /usr/local/bin/xray && -f "$CONFIG_DIR/config.json" ]]; then
             read -p "Lanjutkan? (y/N): " confirm_ssl
             if [[ "$confirm_ssl" == "y" || "$confirm_ssl" == "Y" ]]; then
                 # Load konfigurasi yang ada
-                VMESS_PORT=$(python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vmess'][0])" 2>/dev/null || echo "10001")
-                VLESS_PORT=$(python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vless'][0])" 2>/dev/null || echo "20001")
-                TROJAN_PORT=$(python3 -c "import json; config=json.load(open('$CONFIG_DIR/config.json')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='trojan'][0])" 2>/dev/null || echo "30001")
+                config_file="$CONFIG_DIR/config.json"
+                VMESS_PORT=$(python3 -c "import json; config=json.load(open('$config_file')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vmess'][0])" 2>/dev/null || echo "10001")
+                VLESS_PORT=$(python3 -c "import json; config=json.load(open('$config_file')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='vless'][0])" 2>/dev/null || echo "20001")
+                TROJAN_PORT=$(python3 -c "import json; config=json.load(open('$config_file')); print([i['port'] for i in config['inbounds'] if i.get('protocol')=='trojan'][0])" 2>/dev/null || echo "30001")
                 
                 setup_domain_and_ssl_choice
                 setup_ssl_and_reverse_proxy
