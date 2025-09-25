@@ -346,7 +346,7 @@ sudo menu
 # Pilih: 13. Update Xray
 
 # Update script
-wget -O xray-auto-install-new.sh https://raw.githubusercontent.com/yourusername/xray-auto-install/main/xray-auto-install.sh
+wget -O xray-auto-install-new.sh https://raw.githubusercontent.com/yanuar2185/xray-auto-install/main/xray-auto-install.sh
 chmod +x xray-auto-install-new.sh
 sudo ./xray-auto-install-new.sh
 # Pilih: 2. Install ulang Xray
@@ -381,7 +381,7 @@ Kami menyambut kontribusi dari komunitas! Silakan baca [CONTRIBUTING.md](CONTRIB
 ### Development Setup
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/xray-auto-install.git
+git clone https://github.com/yanuar2185/xray-auto-install.git
 cd xray-auto-install
 
 # Create feature branch
@@ -407,9 +407,9 @@ Script ini dilisensikan di bawah [MIT License](LICENSE). Lihat file LICENSE untu
 ## 📞 Support
 
 ### Getting Help
-- **Documentation**: Baca dokumentasi lengkap di [Wiki](https://github.com/yourusername/xray-auto-install/wiki)
-- **Issues**: Laporkan bug di [GitHub Issues](https://github.com/yourusername/xray-auto-install/issues)
-- **Discussions**: Diskusi di [GitHub Discussions](https://github.com/yourusername/xray-auto-install/discussions)
+- **Documentation**: Baca dokumentasi lengkap di [Wiki](https://github.com/yanuar2185/xray-auto-install/wiki)
+- **Issues**: Laporkan bug di [GitHub Issues](https://github.com/yanuar2185/xray-auto-install/issues)
+- **Discussions**: Diskusi di [GitHub Discussions](https://github.com/yanuar2185/xray-auto-install/discussions)
 
 ### Commercial Support
 Untuk dukungan komersial atau kustomisasi enterprise, hubungi: [support@yourdomain.com](mailto:ardian.syahputra9655@gmail.com)
@@ -422,4 +422,5 @@ Untuk dukungan komersial atau kustomisasi enterprise, hubungi: [support@yourdoma
 **🔄 Stay updated dengan follow repository ini untuk mendapat notifikasi update terbaru.**
 
 Whatsapp "085135087445"
+
 
