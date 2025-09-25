@@ -1,0 +1,91 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    name: Create Release
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Get version from tag
+      id: get_version
+      run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+    
+    - name: Validate script
+      run: |
+        chmod +x xray-auto-install.sh
+        bash -n xray-auto-install.sh
+        echo "Script validation passed"
+    
+    - name: Create release archive
+      run: |
+        mkdir -p release
+        cp xray-auto-install.sh release/
+        cp README.md release/
+        cp LICENSE release/
+        cp CHANGELOG.md release/
+        tar -czf xray-auto-install-${{ steps.get_version.outputs.VERSION }}.tar.gz -C release .
+        zip -r xray-auto-install-${{ steps.get_version.outputs.VERSION }}.zip release/
+    
+    - name: Generate checksums
+      run: |
+        sha256sum xray-auto-install-${{ steps.get_version.outputs.VERSION }}.tar.gz > checksums.txt
+        sha256sum xray-auto-install-${{ steps.get_version.outputs.VERSION }}.zip >> checksums.txt
+    
+    - name: Extract changelog for this version
+      id: changelog
+      run: |
+        # Extract changelog section for this version
+        VERSION=$(echo "${{ steps.get_version.outputs.VERSION }}" | sed 's/^v//')
+        sed -n "/## \[${VERSION}\]/,/## \[/p" CHANGELOG.md | sed '$d' > release_notes.md
+        if [ ! -s release_notes.md ]; then
+          echo "Changes for version $VERSION" > release_notes.md
+          echo "See CHANGELOG.md for details" >> release_notes.md
+        fi
+    
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.get_version.outputs.VERSION }}
+        release_name: Xray Auto Install Script ${{ steps.get_version.outputs.VERSION }}
+        body_path: release_notes.md
+        draft: false
+        prerelease: false
+    
+    - name: Upload tar.gz
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./xray-auto-install-${{ steps.get_version.outputs.VERSION }}.tar.gz
+        asset_name: xray-auto-install-${{ steps.get_version.outputs.VERSION }}.tar.gz
+        asset_content_type: application/gzip
+    
+    - name: Upload zip
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./xray-auto-install-${{ steps.get_version.outputs.VERSION }}.zip
+        asset_name: xray-auto-install-${{ steps.get_version.outputs.VERSION }}.zip
+        asset_content_type: application/zip
+    
+    - name: Upload checksums
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./checksums.txt
+        asset_name: checksums.txt
+        asset_content_type: text/plain
