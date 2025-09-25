@@ -6,7 +6,7 @@ Terima kasih atas minat Anda untuk berkontribusi pada proyek Xray Auto-Install S
 
 ### 1. Reporting Issues
 Jika Anda menemukan bug atau masalah:
-- Buka [GitHub Issues](https://github.com/yourusername/xray-auto-install/issues)
+- Buka [GitHub Issues](https://github.com/yanuar2185/xray-auto-install/issues)
 - Gunakan template issue yang sesuai
 - Berikan informasi yang lengkap:
   - OS dan versi
@@ -16,7 +16,7 @@ Jika Anda menemukan bug atau masalah:
 
 ### 2. Feature Requests
 Untuk request fitur baru:
-- Buka [GitHub Discussions](https://github.com/yourusername/xray-auto-install/discussions)
+- Buka [GitHub Discussions](https://github.com/yanuar2185/xray-auto-install/discussions)
 - Jelaskan use case dan benefit fitur tersebut
 - Berikan contoh implementasi jika memungkinkan
 
@@ -24,7 +24,7 @@ Untuk request fitur baru:
 #### Fork & Clone
 ```bash
 # Fork repository di GitHub, kemudian clone
-git clone https://github.com/yourusername/xray-auto-install.git
+git clone https://github.com/yanuar2185/xray-auto-install.git
 cd xray-auto-install
 
 # Add upstream remote
@@ -269,7 +269,7 @@ Special recognition untuk:
 ### Development Support
 - **Discord**: [Join our dev channel](https://discord.gg/xray-auto-install)
 - **GitHub Discussions**: Untuk pertanyaan development
-- **Email**: dev@yourdomain.com untuk private inquiries
+- **Email**: ardian.syahputra9655@gmail.com untuk private inquiries
 
 ### Mentorship Program
 New contributors bisa mendapat:
@@ -292,4 +292,5 @@ Your contributions make this project better for everyone! 🚀
 
 **Happy Contributing!** 🎯
 
-*"The best way to predict the future is to create it."* - Peter Drucker
+
+*"The best way to predict the future is to create it."* - Copyright (c) 2024 yanuar2185/poetra21
