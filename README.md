@@ -90,10 +90,10 @@ sudo apt install curl wget unzip -y
 #### 2. Download dan Instalasi
 ```bash
 # Method 1: Direct download
-curl -O https://raw.githubusercontent.com/yourusername/xray-auto-install/main/xray-auto-install.sh
+curl -O https://raw.githubusercontent.com/yanuar2185/xray-auto-install/main/xray-auto-install.sh
 
 # Method 2: Clone repository
-git clone https://github.com/yourusername/xray-auto-install.git
+git clone https://github.com/yanuar2185/xray-auto-install.git
 cd xray-auto-install
 
 # Buat executable
@@ -420,3 +420,4 @@ Untuk dukungan komersial atau kustomisasi enterprise, hubungi: [support@yourdoma
 
 
 **🔄 Stay updated dengan follow repository ini untuk mendapat notifikasi update terbaru.**
+
