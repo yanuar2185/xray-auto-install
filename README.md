@@ -425,3 +425,5 @@ Whatsapp "085135087445"
 
 
 
+<img width="1280" height="640" alt="repository-open-graph-template" src="https://github.com/user-attachments/assets/1f829637-131c-4632-a182-b1d5b7b02595" />
+
