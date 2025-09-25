@@ -1,0 +1,122 @@
+name: Feature Request
+description: Suggest an idea or enhancement for the Xray Auto Install Script
+title: "[FEATURE] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new feature!
+        
+        Before submitting, please:
+        1. Search existing issues to see if it's already been requested
+        2. Check if the feature might already exist in the latest version
+        3. Consider if this fits with the project's goals
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What type of feature are you requesting?
+      options:
+        - New protocol support
+        - User interface improvement
+        - Security enhancement
+        - Performance optimization
+        - New management feature
+        - Integration with external service
+        - Documentation improvement
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Problem Description
+      description: Is your feature request related to a problem? Please describe.
+      placeholder: "I'm frustrated when I try to... because..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you'd like to see implemented
+      placeholder: "I would like to see a feature that allows..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: Describe any alternative solutions or features you've considered
+      placeholder: "An alternative would be to..."
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Describe how this feature would be used in practice
+      placeholder: |
+        1. User navigates to the menu
+        2. Selects the new feature option
+        3. Configures settings as needed
+        4. Feature provides the expected functionality
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would be helpful
+        - High - Important for my use case
+        - Critical - Blocking my usage
+    validations:
+      required: true
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: Estimated Complexity
+      description: How complex do you think this feature would be to implement?
+      options:
+        - Low - Simple addition or modification
+        - Medium - Moderate changes required
+        - High - Significant development effort
+        - Unknown - Not sure about complexity
+
+  - type: checkboxes
+    id: implementation-help
+    attributes:
+      label: Implementation
+      description: Would you be willing to help with implementation?
+      options:
+        - label: I would be willing to help implement this feature
+        - label: I would be willing to test this feature
+        - label: I would be willing to write documentation for this feature
+        - label: I can provide detailed requirements and specifications
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, mockups, or examples about the feature request
+      placeholder: "Here are some examples of how this works in other tools..."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched for existing feature requests
+          required: true
+        - label: I have checked the latest version for this functionality
+          required: true
+        - label: This feature aligns with the project's goals
+          required: true
