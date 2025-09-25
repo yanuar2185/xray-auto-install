@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://github.com/your-username/xray-auto-install/blob/main/README.md
+    about: Check the comprehensive documentation and troubleshooting guide
+  - name: 💬 Discussions
+    url: https://github.com/your-username/xray-auto-install/discussions
+    about: Ask questions and discuss ideas with the community
+  - name: 🔒 Security Issues
+    url: https://github.com/your-username/xray-auto-install/security/advisories/new
+    about: Report security vulnerabilities privately
