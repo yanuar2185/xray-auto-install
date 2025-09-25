@@ -1,18 +1,174 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# Build artifacts
+dist/
+*.tar.gz
+*.zip
+checksums.txt
 
-# Other files and folders
-.settings/
+# Logs
+*.log
+*.tmp
+/var/log/xray-install.log
+/var/log/traffic-monitor.log
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# Runtime files
+/root/xray-users.db
+/root/xray-ports.conf
+/root/xray-domain.conf
+/root/xray-backups/
+/var/xray-stats/
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# SSL certificates (keep structure, ignore actual certs)
+/etc/xray-ssl/*.pem
+/etc/xray-ssl/*.key
+/etc/xray-ssl/*.crt
+
+# Configuration files (keep templates, ignore actual configs)
+/usr/local/etc/xray/config.json
+/etc/nginx/sites-available/xray*
+/etc/nginx/sites-enabled/xray*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary files
+/tmp/xray-*
+/tmp/alert-sent-*
+/tmp/traffic-report-*
+
+# User configuration exports
+/root/user-configs/
+*.json
+*.txt
+*.png
+*.qr
+
+# Package manager files
+node_modules/
+.npm/
+*.deb
+*.rpm
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Testing artifacts
+test-results/
+coverage/
+
+# Local development
+.env
+.env.local
+config.local
+settings.local
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# Archive files
+*.tgz
+*.rar
+*.7z
+
+# OS generated files
+.DS_Store?
+ehthumbs.db
+Icon?
+
+# IDE files
+.vscode/settings.json
+.vscode/launch.json
+.idea/workspace.xml
+.idea/tasks.xml
+
+# Runtime directories
+/var/lib/xray/
+/run/xray/
+
+# Certificate authority files
+ca-cert.pem
+ca-key.pem
+
+# Client configuration files
+vmess-*.json
+vless-*.json
+trojan-*.json
+*-qr.png
+
+# Email configuration
+smtp-config.txt
+email-templates/
+
+# Telegram bot configuration
+telegram-config.txt
+
+# Database backups
+*.db.backup
+*.sqlite3
+
+# Monitoring data
+monitoring-data/
+stats-archive/
+
+# Documentation build
+docs/build/
+docs/_build/
+
+# Local scripts
+local-*.sh
+custom-*.sh
+dev-*.sh
+
+# Configuration overrides
+config.override
+settings.override
+
+# Lock files
+*.lock
+.install.lock
+
+# PID files
+*.pid
+
+# Socket files
+*.sock
+
+# Performance logs
+perf.data
+perf.data.old
+
+# Core dumps
+core
+core.*
+
+# Installer downloads
+xray-linux-*.zip
+v2ray-*.zip
+
+# Local test files
+test-*
+demo-*
+sample-*
+
+# Keep these important files (explicit include)
+!README.md
+!CHANGELOG.md
+!LICENSE
+!CONTRIBUTING.md
+!SECURITY.md
+!Makefile
+!.github/
+!docs/
+!examples/
+!xray-auto-install.sh
