@@ -61,6 +61,10 @@ chmod +x xray-auto-install.sh
 sudo ./xray-auto-install.sh
 ```
 
+# BUY COFFEE
+![photo_2025-09-25_23-09-45](https://github.com/user-attachments/assets/410e3c14-47cf-456d-a93b-e8d51d1c466c)
+
+
 ### Konfigurasi Domain (Opsional tapi Direkomendasikan)
 1. **Siapkan Domain**: Beli domain atau gunakan subdomain
 2. **Setup DNS Record**: Buat A record yang mengarah ke IP server
@@ -425,5 +429,6 @@ Whatsapp "085135087445"
 
 
 
-<img width="1280" height="640" alt="repository-open-graph-template" src="https://github.com/user-attachments/assets/1f829637-131c-4632-a182-b1d5b7b02595" />
+
+
 
