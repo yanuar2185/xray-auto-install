@@ -52,7 +52,7 @@ Script otomatis untuk instalasi dan manajemen Xray proxy server dengan fitur ent
 ### Instalasi Otomatis
 ```bash
 # Download script
-wget -O xray-auto-install.sh https://raw.githubusercontent.com/yourusername/xray-auto-install/main/xray-auto-install.sh
+wget -O xray-auto-install.sh https://raw.githubusercontent.com/yanuar2185/xray-auto-install/main/xray-auto-install.sh
 
 # Buat executable
 chmod +x xray-auto-install.sh
@@ -417,5 +417,6 @@ Untuk dukungan komersial atau kustomisasi enterprise, hubungi: [support@yourdoma
 ---
 
 **⭐ Jika script ini membantu Anda, silakan berikan star di repository ini!**
+
 
 **🔄 Stay updated dengan follow repository ini untuk mendapat notifikasi update terbaru.**
