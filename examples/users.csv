@@ -1,0 +1,11 @@
+username,days_valid,traffic_limit_gb,email
+user001,30,50,user001@example.com
+user002,60,100,user002@example.com
+user003,90,75,user003@example.com
+user004,30,25,user004@example.com
+user005,180,200,user005@example.com
+vip001,365,500,vip001@example.com
+vip002,365,1000,vip002@example.com
+trial001,7,5,trial001@example.com
+trial002,7,5,trial002@example.com
+trial003,7,5,trial003@example.com
