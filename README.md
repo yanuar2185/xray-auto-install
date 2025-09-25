@@ -1,6 +1,6 @@
 # 🚀 Xray Auto-Install Script - Advanced Edition
 
-[![Version](https://img.shields.io/badge/version-2.0-blue.svg)](https://github.com/yourusername/xray-auto-install)
+[![Version](https://img.shields.io/badge/version-2.0-blue.svg)](https://github.com/yanuar2185/xray-auto-install)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![OS](https://img.shields.io/badge/os-Ubuntu%20%7C%20Debian%20%7C%20CentOS-lightgrey.svg)](#supported-operating-systems)
 [![SSL](https://img.shields.io/badge/ssl-Let's%20Encrypt%20%7C%20Self--Signed-orange.svg)](#ssl-configuration)
@@ -420,4 +420,5 @@ Untuk dukungan komersial atau kustomisasi enterprise, hubungi: [support@yourdoma
 
 
 **🔄 Stay updated dengan follow repository ini untuk mendapat notifikasi update terbaru.**
+
 
